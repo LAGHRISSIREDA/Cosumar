@@ -1,0 +1,35 @@
+{
+  "actionButtons": {
+      "defaultColor": "#ff0034", // Can also use string color names.
+      "loadNpmCommands":false, // Disables automatic generation of actions for npm commands.
+      "reloadButton":"♻️", // Custom reload button text or icon (default ↻). null value enables automatic reload on configuration change
+      "commands": [
+          {
+              "name": "Validate via SHA",
+              "color": "white",
+              "command": "sh config/LightningValidate.sh", // This is executed in the terminal.
+          },
+          {
+              "name": "Deploy via SHA",
+              "color": "white",
+              "command": "sh config/LightningDeploy.sh", // This is executed in the terminal.
+          }
+          
+          
+          
+      ]
+  },
+  "workbench.colorCustomizations": {
+      "statusBar.background": null,
+      "activityBar.background": null
+  },
+  "files.exclude": {
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "**/Thumbs.db": true,
+      ".mule": true
+  }
+}
