@@ -98,7 +98,7 @@ public without sharing class CTRL018_RelevDePrixController {
         if(currentProfileName == 'System Administrator') return true;
         // Check if the profile exists in custom metadata and return the appropriate value
         if (!profileAccessList.isEmpty()) {
-            return profileAccessList[0].IsEnabled__c && userRegion == selectedRegion;
+            return profileAccessList[0].IsEnabled__c;
         }
 
         // Default to false if no matching record found
