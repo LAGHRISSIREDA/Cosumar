@@ -82,7 +82,7 @@ public without sharing class CTRL018_RelevDePrixController {
     }
 
     @AuraEnabled(cacheable=true)
-    public static Boolean isInputEnabled(String selectedRegion) {
+    public static Boolean isInputEnabled() {
         String currentProfileName = [SELECT Profile.Name, Agence_commerciale__c FROM User WHERE Id = :UserInfo.getUserId()].Profile.Name;
         String userRegion = [SELECT Agence_commerciale__c FROM User WHERE Id = :UserInfo.getUserId()].Agence_commerciale__c;
 
@@ -98,7 +98,7 @@ public without sharing class CTRL018_RelevDePrixController {
         if(currentProfileName == 'System Administrator') return true;
         // Check if the profile exists in custom metadata and return the appropriate value
         if (!profileAccessList.isEmpty()) {
-            return profileAccessList[0].IsEnabled__c;
+            return profileAccessList[0].IsEnabled__c ;
         }
 
         // Default to false if no matching record found

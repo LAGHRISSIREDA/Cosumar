@@ -1,0 +1,53 @@
+.custom-container{
+	color : black;
+}
+.slds-scrollable_x {
+    overflow-x: auto;
+}
+
+lightning-card article{
+    width: 95% !important;
+    margin: 0 auto  !important;
+    -webkit-box-shadow: 3px 4px 10px 0px rgba(173,173,173,1);
+    -moz-box-shadow: 3px 4px 10px 0px rgba(173,173,173,1);
+    box-shadow: 3px 4px 10px 0px rgba(173,173,173,1);
+}
+
+.animate-Text{
+    color: #6e5c00;
+    font-weight: 700;
+    animation: looper 1s infinite;
+    transition: all ease-in-out;
+}
+
+@keyframes looper {
+    0% {
+        transform: scale(1);
+        color: #6e5c00;
+    }
+    50% {
+        transform: scale(.9);
+        color: #d4a017;
+    }
+    100% {
+        transform: scale(1);
+        color: #6e5c00;
+    }
+}
+
+.Search-button {
+    display: flex;
+    flex-direction: column;
+    gap: 0px; /* Adjust gap for smaller screens */
+    width: 100%;
+}
+
+
+@media (min-width: 1285px) {
+    .Search-button {
+        flex-direction: row;
+        gap: 30px; 
+        width: 100%;
+    }
+
+}
