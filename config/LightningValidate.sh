@@ -21,4 +21,4 @@ echo "+++++++++++++"
 modifiedFiles=$(git diff-tree --no-commit-id --name-only --diff-filter=AM -r "$commitSHA" | tr '\n' ',' | sed 's/,$//')
 
 # Deploy the modified files to the specified org
-sfdx force:source:deploy -p "$modifiedFiles" -u "$destinationOrg" -c --testlevel RunSpecifiedTests --runtests "MobileAppWrapper_Test"
+sfdx force:source:deploy -p "$modifiedFiles" -u "$destinationOrg" -c --testlevel RunSpecifiedTests --runtests "CTRL018_RelevDePrixController_Test"
