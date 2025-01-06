@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_de_produit__c</fullName>
+    <label>Type de produit</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pain</fullName>
+                <default>false</default>
+                <label>Pain</label>
+            </value>
+            <value>
+                <fullName>Lingot</fullName>
+                <default>false</default>
+                <label>Lingot</label>
+            </value>
+            <value>
+                <fullName>Morceaux</fullName>
+                <default>false</default>
+                <label>Morceaux</label>
+            </value>
+            <value>
+                <fullName>Granulé plastique</fullName>
+                <default>false</default>
+                <label>Granulé plastique</label>
+            </value>
+            <value>
+                <fullName>Granulé papier 1kg</fullName>
+                <default>false</default>
+                <label>Granulé papier 1kg</label>
+            </value>
+            <value>
+                <fullName>Granulé papier 2kg</fullName>
+                <default>false</default>
+                <label>Granulé papier 2kg</label>
+            </value>
+            <value>
+                <fullName>Granulé 50kg</fullName>
+                <default>false</default>
+                <label>Granulé 50kg</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
