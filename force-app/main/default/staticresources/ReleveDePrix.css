@@ -1,0 +1,34 @@
+lightning-card article{
+    width: 95% !important;
+    margin: 0 auto  !important;
+    -webkit-box-shadow: 3px 4px 10px 0px rgba(173,173,173,1);
+    -moz-box-shadow: 3px 4px 10px 0px rgba(173,173,173,1);
+    box-shadow: 3px 4px 10px 0px rgba(173,173,173,1);
+}
+
+div[part="input-text"] {
+   display:flex;
+    
+}
+
+.slds-input{
+    border: .1px solid #0d76b04a;
+    min-width: 90px;
+    
+}
+.slds-input{
+    color: rgb(0 128 255);
+    font-weight: 600;
+}
+
+
+
+lightning-combobox{
+    width: 235px;
+    color: rgb(31 63 132 / 67%);
+  
+}
+
+lightning-combobox label{
+    display:none;
+}
