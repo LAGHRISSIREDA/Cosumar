@@ -9,12 +9,23 @@ public without sharing class CTRL018_RelevDePrixController {
             WHERE Id = :UserInfo.getUserId()
             LIMIT 1
         ];
-        return currentUser.Agence_commerciale__c;
+        // Get all picklist values for Region__c and map API names to labels
+        Map<String, String> regionApiToLabelMap = new Map<String, String>();
+        Schema.DescribeFieldResult fieldDescribe = Schema.SObjectType.User.fields.getMap().get('Agence_commerciale__c').getDescribe();
+        for (Schema.PicklistEntry entry : fieldDescribe.getPicklistValues()) {
+            regionApiToLabelMap.put(entry.getValue(), entry.getLabel());
+        }
+        
+        // Get the label for the current user's region
+        String regionApiName = currentUser.Agence_commerciale__c;
+        String regionLabel = regionApiToLabelMap.containsKey(regionApiName) ? regionApiToLabelMap.get(regionApiName) : null;
+
+        return regionLabel;
     }
 
 
     @AuraEnabled
-    public static Map<String, Object> getMatrixData(Decimal selectedYear, String selectedMonth, String selectedCircuit, String selectedRegion) {
+    public static Map<String, Object> getMatrixData(Decimal selectedYear, String selectedMonth, String selectedCircuit, String selectedRegion,String selectedSousRegion,String selectedMilieu) {
         Map<String, Object> result = new Map<String, Object>();
 
         // Debugging the selected year, month, circuit and region
@@ -22,6 +33,7 @@ public without sharing class CTRL018_RelevDePrixController {
         System.debug('selectedMonth: ' + selectedMonth);
         System.debug('selectedCircuit: ' + selectedCircuit);
         System.debug('selectedRegion: ' + selectedRegion);
+        system.debug('selectedSousRegion'+selectedSousRegion);
 
         // Return only the provided Circuit value in the response
         List<Map<String, String>> circuitPicklistValues = new List<Map<String, String>>();
@@ -40,13 +52,13 @@ public without sharing class CTRL018_RelevDePrixController {
         // Build the matrix for existing records
         Map<String, Map<String, Object>> productPrices = new Map<String, Map<String, Object>>();
         List<Relev_de_prix__c> records = [
-            SELECT Id, Type_de_produit__c, Type_de_client__c, Prix__c, Circuit_de_client__c, Agence__c, Annee__c, Mois__c
+            SELECT Id, Type_de_produit__c, Type_de_client__c, Prix__c, Circuit_de_client__c, R_gion__c, Annee__c, Mois__c,Sous_r_gion__c,Milieu__c
             FROM Relev_de_prix__c
-            WHERE Annee__c = : selectedYear AND Mois__c = : selectedMonth AND Circuit_de_client__c = :selectedCircuit AND Agence__c = :selectedRegion 
+            WHERE Annee__c = : selectedYear AND Mois__c = : selectedMonth AND Circuit_de_client__c = :selectedCircuit AND R_gion__c = :selectedRegion AND Sous_r_gion__c = :selectedSousRegion AND Milieu__c = :selectedMilieu
         ];
 
         for (Relev_de_prix__c record : records) {
-            String key = String.valueOf(record.Annee__c) + '_'+record.Mois__c + '_' + record.Agence__c + '_' + record.Circuit_de_client__c + '_' + record.Type_de_client__c;
+            String key = String.valueOf(record.Annee__c) + '_'+record.Mois__c + '_' + record.R_gion__c + '_' + record.Circuit_de_client__c + '_' + record.Type_de_client__c+ '_' + record.Sous_r_gion__c+ '_' + record.Milieu__c;
 
             if (!productPrices.containsKey(record.Type_de_produit__c)) {
                 productPrices.put(record.Type_de_produit__c, new Map<String, Object>());
@@ -76,13 +88,15 @@ public without sharing class CTRL018_RelevDePrixController {
         return getPicklistValues('Relev_de_prix__c', 'Circuit_de_client__c');
     }
 
+    
+
     @AuraEnabled(cacheable=true)
     public static List<Map<String, String>> getRegionPicklistValue() {
-        return getPicklistValues('Relev_de_prix__c', 'Agence__c');
+        return getPicklistValues('Relev_de_prix__c', 'R_gion__c');
     }
 
     @AuraEnabled(cacheable=true)
-    public static Boolean isInputEnabled() {
+    public static Boolean isInputEnabled(String selectedRegion) {
         String currentProfileName = [SELECT Profile.Name, Agence_commerciale__c FROM User WHERE Id = :UserInfo.getUserId()].Profile.Name;
         String userRegion = [SELECT Agence_commerciale__c FROM User WHERE Id = :UserInfo.getUserId()].Agence_commerciale__c;
 
@@ -98,14 +112,14 @@ public without sharing class CTRL018_RelevDePrixController {
         if(currentProfileName == 'System Administrator') return true;
         // Check if the profile exists in custom metadata and return the appropriate value
         if (!profileAccessList.isEmpty()) {
-            return profileAccessList[0].IsEnabled__c ;
+            return profileAccessList[0].IsEnabled__c;
         }
 
         // Default to false if no matching record found
         return false;
     }
 
-    private static List<Map<String, String>> getPicklistValues(String objectName, String fieldName) {
+    public static List<Map<String, String>> getPicklistValues(String objectName, String fieldName) {
         List<Map<String, String>> picklistValues = new List<Map<String, String>>();
 
         Schema.DescribeSObjectResult objDescribe = Schema.getGlobalDescribe().get(objectName).getDescribe();
@@ -145,11 +159,7 @@ public without sharing class CTRL018_RelevDePrixController {
         List<Relev_de_prix__c> recordsToUpdate = new List<Relev_de_prix__c>();
         List<Relev_de_prix__c> recordsToCreate = new List<Relev_de_prix__c>();
 
-        Map<String, String> regionLabelMap = new Map<String, String>();
-        Schema.DescribeFieldResult fieldDescribe = Schema.SObjectType.Relev_de_prix__c.fields.getMap().get('Agence__c').getDescribe();
-        for (Schema.PicklistEntry entry : fieldDescribe.getPicklistValues()) {
-            regionLabelMap.put(entry.getValue(), entry.getLabel());
-        }
+        
 
         // Process the incoming updates
         for (Map<String, Object> updatess : updates) {
@@ -166,7 +176,8 @@ public without sharing class CTRL018_RelevDePrixController {
             String circuit = (String) updatess.get('circuit');
             String client = (String) updatess.get('client');
             String product = (String) updatess.get('product');
-
+            String sousRegion = (String) updatess.get('sousRegion');
+            String milieu =(String) updatess.get('milieu');
             // Ensure all necessary fields are present
             if (price == null || month == null || region == null || circuit == null || client == null || product == null) {
                 System.debug('Skipping record due to missing data: ' + updatess);
@@ -174,7 +185,7 @@ public without sharing class CTRL018_RelevDePrixController {
             }
 
             // Replace API name of region with its label
-            String regionLabel = regionLabelMap.get(region) != null ? regionLabelMap.get(region) : region;
+            String regionLabel = region;
 
 
             if (id != null) {
@@ -192,12 +203,14 @@ public without sharing class CTRL018_RelevDePrixController {
                 recordsToCreate.add(new Relev_de_prix__c(
                     Name = recordName,
                     Mois__c = month,
-                    Agence__c = region,
+                    R_gion__c = region,
                     Annee__c = year,
                     Circuit_de_client__c = circuit,
                     Type_de_client__c = client,
                     Type_de_produit__c = product,
-                    Prix__c = price
+                    Prix__c = price,
+                    Sous_r_gion__c = sousRegion,
+                    milieu__c = milieu
                 ));
             }
         }
@@ -224,5 +237,31 @@ public without sharing class CTRL018_RelevDePrixController {
         System.debug('Records updated: ' + recordsToUpdate);
         System.debug('Records created: ' + recordsToCreate);
     }
+
+    @AuraEnabled(cacheable=true)
+    public static List<Map<String, String>> getMilieuPicklistValues() {
+        return getPicklistValues('Relev_de_prix__c', 'Milieu__c');
+    }
+
+    @AuraEnabled(cacheable=true)
+    public static List<Map<String, String>> getSousRegionPicklistValues(String selectedRegion) {
+        List<Map<String, String>> sousRegionValues = new List<Map<String, String>>();
+            system.debug('heeeeelllloooo'+selectedRegion);
+        List<RegionSousRegionMapping__mdt> mappings = [
+            SELECT R_gion__c, Sous_r_gion__c
+            FROM RegionSousRegionMapping__mdt
+            WHERE R_gion__c = :selectedRegion
+        ];
+
+        for (RegionSousRegionMapping__mdt mapping : mappings) {
+            sousRegionValues.add(new Map<String, String>{
+                'label' => mapping.Sous_r_gion__c,
+                'value' => mapping.Sous_r_gion__c
+            });
+        }
+
+        return sousRegionValues;
+    }
+
 
 }

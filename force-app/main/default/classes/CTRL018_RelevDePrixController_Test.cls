@@ -22,7 +22,7 @@ static void setup() {
     // Create test records for Relev_de_prix__c
     insert new Relev_de_prix__c(
         Name = 'MARRAKECH-Traditionnel-D\u00e9taillant-Pain',
-        Agence__c = 'A02',
+        
         Circuit_de_client__c = 'Traditionnel',
         Type_de_client__c = 'Gros',
         Type_de_produit__c = 'Pain',
@@ -31,7 +31,7 @@ static void setup() {
 
     insert new Relev_de_prix__c(
         Name = 'MARRAKECH-Traditionnel-Administration-Pain',
-        Agence__c = 'A02',
+       
         Circuit_de_client__c = 'Traditionnel',
         Type_de_client__c = 'Administration',
         Type_de_produit__c = 'Pain',
@@ -51,13 +51,15 @@ static void setup() {
 
     @isTest
     static void testGetMatrixData() {
-        Test.startTest();
-        Map<String, Object> result = CTRL018_RelevDePrixController.getMatrixData(2024,'12','Traditionnel', 'Region1');
-        Test.stopTest();
+        User testUser = [SELECT Id FROM User WHERE Alias = 'testuser' LIMIT 1];
+        System.runAs(testUser) {
+            Test.startTest();
+            Map<String, Object> result = CTRL018_RelevDePrixController.getMatrixData(2024, '12', 'Traditionnel', 'Casablanca', 'Casa ville centre', 'Rural');
+            Test.stopTest();
 
-        System.assertNotEquals(null, result, 'Matrix data should not be null');
-        System.assert(result.containsKey('clients'), 'Clients key should exist in matrix data');
-        System.assert(result.containsKey('products'), 'Products key should exist in matrix data');
+            System.assertNotEquals(null, result, 'Matrix data should not be null');
+            System.assert(result.containsKey('matrix'), 'Matrix key should exist in the result');
+        }
     }
 
     @isTest
@@ -93,6 +95,25 @@ static void setup() {
 
         
     }
+    
+    
+    @isTest
+    static void testGetSousRegionPicklistValues() {
+        Test.startTest();
+        List<Map<String, String>> result = CTRL018_RelevDePrixController.getSousRegionPicklistValues('A02');
+        Test.stopTest();
+
+        System.assertNotEquals(null, result, 'Sous-region picklist values should not be null');
+    }
+    
+    @isTest
+    static void testPicklistValues() {
+        Test.startTest();
+        List<Map<String, String>> result = CTRL018_RelevDePrixController.getPicklistValues('Relev_de_prix__c', 'Type_de_produit__c');
+        Test.stopTest();
+
+        System.assertNotEquals(null, result, 'Picklist values should not be null');
+    }
 
     @isTest
     static void testSaveMatrixData() {
@@ -102,10 +123,12 @@ static void setup() {
                 'price' => 200.0,
                 'year'=>'2024',
                 'month'=>'12',
-                'region' => 'A02',
+                'region' => 'Casablanca',
                 'circuit' => 'Traditionnel',
                 'client' => 'Détaillant',
-                'product' => 'Pain'
+                'product' => 'Pain',
+                'sousRegion' => 'Casa ville centre',
+                'milieu' =>'Rural'
             }
         };
 
