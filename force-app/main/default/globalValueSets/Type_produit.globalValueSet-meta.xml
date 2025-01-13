@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>ZCPR</fullName>
+        <default>false</default>
+        <label>Co-Produits Cosumar</label>
+    </customValue>
+    <customValue>
+        <fullName>ZNEG</fullName>
+        <default>false</default>
+        <label>Produit Négoce</label>
+    </customValue>
+    <customValue>
+        <fullName>ZPFN</fullName>
+        <default>false</default>
+        <label>Produit fini Cosumar</label>
+    </customValue>
+    <customValue>
+        <fullName>ZPSF</fullName>
+        <default>false</default>
+        <label>Produit Semi fini</label>
+    </customValue>
+    <customValue>
+        <fullName>ZSRV</fullName>
+        <default>false</default>
+        <label>Prest de services Cosumar</label>
+    </customValue>
+    <masterLabel>Type Produit</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

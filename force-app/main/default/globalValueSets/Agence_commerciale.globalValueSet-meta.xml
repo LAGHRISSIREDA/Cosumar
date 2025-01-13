@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>A01</fullName>
+        <default>true</default>
+        <label>CASABLANCA</label>
+    </customValue>
+    <customValue>
+        <fullName>A02</fullName>
+        <default>false</default>
+        <label>MARRAKECH</label>
+    </customValue>
+    <customValue>
+        <fullName>A03</fullName>
+        <default>false</default>
+        <label>KENITRA</label>
+    </customValue>
+    <customValue>
+        <fullName>A04</fullName>
+        <default>false</default>
+        <label>FES</label>
+    </customValue>
+    <customValue>
+        <fullName>A05</fullName>
+        <default>false</default>
+        <label>MEKNES</label>
+    </customValue>
+    <customValue>
+        <fullName>A06</fullName>
+        <default>false</default>
+        <label>OUJDA</label>
+    </customValue>
+    <customValue>
+        <fullName>A07</fullName>
+        <default>false</default>
+        <label>AGADIR</label>
+    </customValue>
+    <customValue>
+        <fullName>A08</fullName>
+        <default>false</default>
+        <label>KSAR LEKBIR</label>
+    </customValue>
+    <customValue>
+        <fullName>A09</fullName>
+        <default>false</default>
+        <label>OULAD AYAD</label>
+    </customValue>
+    <customValue>
+        <fullName>A11</fullName>
+        <default>false</default>
+        <label>KSIBIA</label>
+    </customValue>
+    <customValue>
+        <fullName>A12</fullName>
+        <default>false</default>
+        <label>SIDI BENNOUR</label>
+    </customValue>
+    <customValue>
+        <fullName>A13</fullName>
+        <default>false</default>
+        <label>ZAIO</label>
+    </customValue>
+    <customValue>
+        <fullName>A14</fullName>
+        <default>false</default>
+        <label>MBK SURAC</label>
+    </customValue>
+    <customValue>
+        <fullName>A10</fullName>
+        <default>false</default>
+        <label>MBK SUNABEL</label>
+    </customValue>
+    <customValue>
+        <fullName>A15</fullName>
+        <default>false</default>
+        <label>TANGER</label>
+    </customValue>
+    <masterLabel>Agence commerciale</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

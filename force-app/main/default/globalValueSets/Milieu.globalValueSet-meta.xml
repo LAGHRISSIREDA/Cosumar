@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Rural</fullName>
+        <default>false</default>
+        <label>Rural</label>
+    </customValue>
+    <customValue>
+        <fullName>Urbain</fullName>
+        <default>false</default>
+        <label>Urbain</label>
+    </customValue>
+    <masterLabel>Milieu</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

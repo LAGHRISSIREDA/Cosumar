@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Agadir ville</fullName>
+        <default>false</default>
+        <label>Agadir ville</label>
+    </customValue>
+    <customValue>
+        <fullName>Ait melloul</fullName>
+        <default>false</default>
+        <label>Ait melloul</label>
+    </customValue>
+    <customValue>
+        <fullName>Al haouz</fullName>
+        <default>false</default>
+        <label>Al haouz</label>
+    </customValue>
+    <customValue>
+        <fullName>Al hoceima</fullName>
+        <default>false</default>
+        <label>Al hoceima</label>
+    </customValue>
+    <customValue>
+        <fullName>Azilal</fullName>
+        <default>false</default>
+        <label>Azilal</label>
+    </customValue>
+    <customValue>
+        <fullName>Azrou</fullName>
+        <default>false</default>
+        <label>Azrou</label>
+    </customValue>
+    <customValue>
+        <fullName>Belkssiri</fullName>
+        <default>false</default>
+        <label>Belkssiri</label>
+    </customValue>
+    <customValue>
+        <fullName>Beni mellal</fullName>
+        <default>false</default>
+        <label>Beni mellal</label>
+    </customValue>
+    <customValue>
+        <fullName>Berkane</fullName>
+        <default>false</default>
+        <label>Berkane</label>
+    </customValue>
+    <customValue>
+        <fullName>Biougra</fullName>
+        <default>false</default>
+        <label>Biougra</label>
+    </customValue>
+    <customValue>
+        <fullName>Casa nord</fullName>
+        <default>false</default>
+        <label>Casa nord</label>
+    </customValue>
+    <customValue>
+        <fullName>Casa sud</fullName>
+        <default>false</default>
+        <label>Casa sud</label>
+    </customValue>
+    <customValue>
+        <fullName>Casa ville centre</fullName>
+        <default>false</default>
+        <label>Casa ville centre</label>
+    </customValue>
+    <customValue>
+        <fullName>Chaouen</fullName>
+        <default>false</default>
+        <label>Chaouen</label>
+    </customValue>
+    <customValue>
+        <fullName>Chichaoua</fullName>
+        <default>false</default>
+        <label>Chichaoua</label>
+    </customValue>
+    <customValue>
+        <fullName>Doukala</fullName>
+        <default>false</default>
+        <label>Doukala</label>
+    </customValue>
+    <customValue>
+        <fullName>Driouech</fullName>
+        <default>false</default>
+        <label>Driouech</label>
+    </customValue>
+    <customValue>
+        <fullName>El jadida</fullName>
+        <default>false</default>
+        <label>El jadida</label>
+    </customValue>
+    <customValue>
+        <fullName>Errachidia</fullName>
+        <default>false</default>
+        <label>Errachidia</label>
+    </customValue>
+    <customValue>
+        <fullName>Feguig</fullName>
+        <default>false</default>
+        <label>Feguig</label>
+    </customValue>
+    <customValue>
+        <fullName>Fkih Ben saleh</fullName>
+        <default>false</default>
+        <label>Fkih Ben saleh</label>
+    </customValue>
+    <customValue>
+        <fullName>Guercif</fullName>
+        <default>false</default>
+        <label>Guercif</label>
+    </customValue>
+    <customValue>
+        <fullName>Inzegane</fullName>
+        <default>false</default>
+        <label>Inzegane</label>
+    </customValue>
+    <customValue>
+        <fullName>Jerada</fullName>
+        <default>false</default>
+        <label>Jerada</label>
+    </customValue>
+    <customValue>
+        <fullName>Kelaa des sraghna</fullName>
+        <default>false</default>
+        <label>Kelaa des sraghna</label>
+    </customValue>
+    <customValue>
+        <fullName>Kenitra</fullName>
+        <default>false</default>
+        <label>Kenitra</label>
+    </customValue>
+    <customValue>
+        <fullName>Khemisset</fullName>
+        <default>false</default>
+        <label>Khemisset</label>
+    </customValue>
+    <customValue>
+        <fullName>Khenifra</fullName>
+        <default>false</default>
+        <label>Khenifra</label>
+    </customValue>
+    <customValue>
+        <fullName>Khnifra</fullName>
+        <default>false</default>
+        <label>Khnifra</label>
+    </customValue>
+    <customValue>
+        <fullName>Khoribga</fullName>
+        <default>false</default>
+        <label>Khoribga</label>
+    </customValue>
+    <customValue>
+        <fullName>Kser lakbire</fullName>
+        <default>false</default>
+        <label>Kser lakbire</label>
+    </customValue>
+    <customValue>
+        <fullName>Lalla mimouna</fullName>
+        <default>false</default>
+        <label>Lalla mimouna</label>
+    </customValue>
+    <customValue>
+        <fullName>Larrache</fullName>
+        <default>false</default>
+        <label>Larrache</label>
+    </customValue>
+    <customValue>
+        <fullName>Marrakech ville</fullName>
+        <default>false</default>
+        <label>Marrakech ville</label>
+    </customValue>
+    <customValue>
+        <fullName>Meknes ville</fullName>
+        <default>false</default>
+        <label>Meknes ville</label>
+    </customValue>
+    <customValue>
+        <fullName>Midelt</fullName>
+        <default>false</default>
+        <label>Midelt</label>
+    </customValue>
+    <customValue>
+        <fullName>Nador</fullName>
+        <default>false</default>
+        <label>Nador</label>
+    </customValue>
+    <customValue>
+        <fullName>Ouarzzazate</fullName>
+        <default>false</default>
+        <label>Ouarzzazate</label>
+    </customValue>
+    <customValue>
+        <fullName>Ouezzane</fullName>
+        <default>false</default>
+        <label>Ouezzane</label>
+    </customValue>
+    <customValue>
+        <fullName>Oujda Angad</fullName>
+        <default>false</default>
+        <label>Oujda Angad</label>
+    </customValue>
+    <customValue>
+        <fullName>Rabat - temara</fullName>
+        <default>false</default>
+        <label>Rabat - temara</label>
+    </customValue>
+    <customValue>
+        <fullName>Rehamna</fullName>
+        <default>false</default>
+        <label>Rehamna</label>
+    </customValue>
+    <customValue>
+        <fullName>Safi</fullName>
+        <default>false</default>
+        <label>Safi</label>
+    </customValue>
+    <customValue>
+        <fullName>Sefrou</fullName>
+        <default>false</default>
+        <label>Sefrou</label>
+    </customValue>
+    <customValue>
+        <fullName>Settat-berrchid</fullName>
+        <default>false</default>
+        <label>Settat-berrchid</label>
+    </customValue>
+    <customValue>
+        <fullName>Sidi slimane</fullName>
+        <default>false</default>
+        <label>Sidi slimane</label>
+    </customValue>
+    <customValue>
+        <fullName>Sidiyahya</fullName>
+        <default>false</default>
+        <label>Sidiyahya</label>
+    </customValue>
+    <customValue>
+        <fullName>Souklarbaa</fullName>
+        <default>false</default>
+        <label>Souklarbaa</label>
+    </customValue>
+    <customValue>
+        <fullName>Taounate</fullName>
+        <default>false</default>
+        <label>Taounate</label>
+    </customValue>
+    <customValue>
+        <fullName>Taroudant</fullName>
+        <default>false</default>
+        <label>Taroudant</label>
+    </customValue>
+    <customValue>
+        <fullName>Taza</fullName>
+        <default>false</default>
+        <label>Taza</label>
+    </customValue>
+    <customValue>
+        <fullName>Tetouan</fullName>
+        <default>false</default>
+        <label>Tetouan</label>
+    </customValue>
+    <customValue>
+        <fullName>Tiznit</fullName>
+        <default>false</default>
+        <label>Tiznit</label>
+    </customValue>
+    <customValue>
+        <fullName>Youssoufia</fullName>
+        <default>false</default>
+        <label>Youssoufia</label>
+    </customValue>
+    <customValue>
+        <fullName>Zagora</fullName>
+        <default>false</default>
+        <label>Zagora</label>
+    </customValue>
+    <masterLabel>Sous région</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>
