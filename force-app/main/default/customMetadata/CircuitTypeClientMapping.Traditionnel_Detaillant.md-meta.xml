@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Traditionnel Détaillant</label>
+    <protected>false</protected>
+    <values>
+        <field>Circuit_de_client__c</field>
+        <value xsi:type="xsd:string">Traditionnel</value>
+    </values>
+    <values>
+        <field>Ordre_d_affichage__c</field>
+        <value xsi:type="xsd:double">3.0</value>
+    </values>
+    <values>
+        <field>Type_de_client__c</field>
+        <value xsi:type="xsd:string">Détaillant</value>
+    </values>
+</CustomMetadata>
