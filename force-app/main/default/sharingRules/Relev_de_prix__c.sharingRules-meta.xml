@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Share_Relev_de_prix_Responsables_RO</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share Relevé de prix - Responsables RO</label>
+        <sharedTo>
+            <group>Responsables_Releve_des_prix</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_Releve_de_prix_Fes</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Relevé de prix - Fes</label>
+        <sharedTo>
+            <role>Chef_d_agence_Fes</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>R_gion__c</field>
+            <operation>equals</operation>
+            <value>Fès</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_Releve_de_prix_Oujda</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share - Relevé de prix - Oujda</label>
+        <sharedTo>
+            <role>Chef_d_agence_Oujda</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>R_gion__c</field>
+            <operation>equals</operation>
+            <value>Oujda</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_Releve_de_prix_Oulad_Ayad</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Relevé de prix - Oulad Ayad</label>
+        <sharedTo>
+            <role>Chef_d_agence_Oulad_Ayad</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>R_gion__c</field>
+            <operation>equals</operation>
+            <value>Oulad Ayad</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_Releve_de_prix_Tanger</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Relevé de prix - Tanger</label>
+        <sharedTo>
+            <role>Chef_d_agence_Tanger</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>R_gion__c</field>
+            <operation>equals</operation>
+            <value>Tanger</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_Releve_des_prix</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Relevé des prix - Casa</label>
+        <sharedTo>
+            <role>Chef_d_agence_Casa</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>R_gion__c</field>
+            <operation>equals</operation>
+            <value>Casablanca</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_Releve_des_prix_Agadir</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Relevé des prix - Agadir</label>
+        <sharedTo>
+            <role>Chef_d_agence_Agadir</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>R_gion__c</field>
+            <operation>equals</operation>
+            <value>Agadir</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_Releve_des_prix_Marrakech</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Relevé des prix - Marrakech</label>
+        <sharedTo>
+            <role>Chef_d_agence_Marrakech</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>R_gion__c</field>
+            <operation>equals</operation>
+            <value>Marrakech</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_Releve_des_prix_Meknes</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share - Relevé des prix - Meknes</label>
+        <sharedTo>
+            <role>Chef_d_agence_Meknes</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>R_gion__c</field>
+            <operation>equals</operation>
+            <value>Meknes</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>
